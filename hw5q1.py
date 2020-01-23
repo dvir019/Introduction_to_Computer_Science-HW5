@@ -22,8 +22,12 @@ def compare_strings(s1, s2):
 
 
 def sort_list_of_strings(str_lst):
-    pass
-    # write your code here
+    top_index = len(str_lst)
+    for i in range(top_index):
+        for j in range(0, top_index-1):
+            if not compare_strings(str_lst[j], str_lst[j+1]):
+                str_lst[j], str_lst[j + 1] = str_lst[j+1], str_lst[j]
+
 
 
 # leave intact
@@ -37,4 +41,4 @@ def main():
 
 
 if __name__ == '__main__':
-    print(compare_strings(input(), input()))
+    main()
