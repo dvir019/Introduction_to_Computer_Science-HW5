@@ -1,0 +1,4 @@
+Insert a list of strings:
+
+The sorted list:
+['^^^4ksbjsGG', '^^^4ksbjsGGpQ', 'lvnlwjdf', 'lvnlwjdfcv']

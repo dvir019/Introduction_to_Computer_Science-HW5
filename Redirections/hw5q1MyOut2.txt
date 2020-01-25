@@ -1,0 +1,4 @@
+Insert a list of strings:
+
+The sorted list:
+['ert', 'erT', 'eRt', 'Ert', 'eRT', 'ErT', 'ERt', 'ERT']

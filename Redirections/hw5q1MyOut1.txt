@@ -1,0 +1,4 @@
+Insert a list of strings:
+
+The sorted list:
+['aa133', 'aaaa', 'aaaA', 'aaaaa', 'aaaaab']

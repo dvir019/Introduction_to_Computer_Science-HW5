@@ -1,0 +1,4 @@
+Insert a list of strings:
+
+The sorted list:
+['.', '..', '...', '.a', '.a.', '.a.a', '.a.a.']
