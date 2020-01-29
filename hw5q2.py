@@ -1,4 +1,16 @@
 def count_occurrences(s, c):
+    """
+    Counts the amount of occurrences of a given letter in a given
+    alphabetically sorted string.
+
+    :param s: The string
+    :type s: str
+    :param c: The letter
+    :type c: str
+
+    :return: The amount of occurrences of a the letter in the string
+    :rtype: int
+    """
     low = 0
     high = len(s) - 1
     first_occurrence = -1
@@ -27,35 +39,27 @@ def count_occurrences(s, c):
         else:
             high = mid - 1
 
-    if first_occurrence != -1:
-        return last_occurrence - first_occurrence + 1
-    return 0
+    # Return the result
+    if first_occurrence == -1:
+        return 0
+    return last_occurrence - first_occurrence + 1
 
 
 def are_equal(s1, s2):
-    # if len(s1) != len(s2):
-    #     return False
-    # if len(s1) == 0:
-    #     return True  # Both strings are empty
-    # s1_first_char = s1[0]
-    # s2_first_char = s2[0]
-    # if ord(s1_first_char) != ord(s2_first_char):
-    #     print("diff")
-    #     return False
-    # s1_occurrences = count_occurrences(s1, s1_first_char)
-    # s2_occurrences = count_occurrences(s2, s2_first_char)
-    # print(f"s1_first: {s1_first_char}, s1_occ: {s1_occurrences}")
-    # print(f"s2_first: {s2_first_char}, s2_occ: {s2_occurrences}")
-    #
-    # if s1_occurrences != s2_occurrences:
-    #     return False
-    # return are_equal(s1[s1_occurrences:], s2[s2_occurrences:])
+    """
+    Checks if two alphabetically sorted string are equal.
 
-    # if len(s1) != len(s2):
-    #     return False
-    # if len(s1) == 0:
-    #     return True  # Both strings are empty
+    :param s1: The first string
+    :type s1: str
+    :param s2: The second string
+    :type s2: str
+
+    :return: Whether or not the strings are equal
+    :rtype: bool
+    """
+    # Generate list of letters
     letters = [chr(c) for c in range(ord('a'), ord('z') + 1)]
+
     for letter in letters:
         s1_occurrences = count_occurrences(s1, letter)
         s2_occurrences = count_occurrences(s2, letter)
