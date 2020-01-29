@@ -1,0 +1,3 @@
+Enter s1:
+Enter s2:
+Strings are equal!
