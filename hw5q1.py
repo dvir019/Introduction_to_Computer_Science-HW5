@@ -41,10 +41,9 @@ def sort_list_of_strings(str_lst):
     """
     top_index = len(str_lst)
     for i in range(top_index):
-        for j in range(0, top_index-1):
-            if not compare_strings(str_lst[j], str_lst[j+1]):
-                str_lst[j], str_lst[j + 1] = str_lst[j+1], str_lst[j]
-
+        for j in range(0, top_index - 1):
+            if not compare_strings(str_lst[j], str_lst[j + 1]):
+                str_lst[j], str_lst[j + 1] = str_lst[j + 1], str_lst[j]
 
 
 # leave intact
