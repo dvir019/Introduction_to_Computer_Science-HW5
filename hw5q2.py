@@ -1,14 +1,35 @@
 def count_occurrences(s, c):
     low = 0
     high = len(s) - 1
-    new_c = chr(ord(c) + 1)
+    first_occurrence = -1
+    last_occurrence = -1
+    ord_c = ord(c)
+    # Find the first occurrence
     while low <= high:
         mid = (low + high) // 2
-        if ord(new_c) <= ord(s[mid]):
+        ord_mid = ord(s[mid])
+        if ord_c <= ord_mid:
+            if ord_c == ord_mid:
+                first_occurrence = mid
             high = mid - 1
         else:
             low = mid + 1
-    return low
+    low = 0
+    high = len(s) - 1
+    # Find the last occurrence
+    while low <= high:
+        mid = (low + high) // 2
+        ord_mid = ord(s[mid])
+        if ord_c >= ord_mid:
+            if ord_c == ord_mid:
+                last_occurrence = mid
+            low = mid + 1
+        else:
+            high = mid - 1
+
+    if first_occurrence != -1:
+        return last_occurrence - first_occurrence + 1
+    return 0
 
 
 def are_equal(s1, s2):
@@ -39,11 +60,7 @@ def are_equal(s1, s2):
         s1_occurrences = count_occurrences(s1, letter)
         s2_occurrences = count_occurrences(s2, letter)
         if s1_occurrences != s2_occurrences:
-            print(f"dismatch in letter {letter}:\n{s1_occurrences} in s1\n{s2_occurrences} in s2")
             return False
-        s1 = s1[s1_occurrences:]
-        s2 = s2[s2_occurrences:]
-
     return True
 
 
@@ -62,8 +79,4 @@ def main():
 
 # leave intact
 if __name__ == '__main__':
-    # s="aaaaaaaaaaaaagz"
-    # print(count_occurrences(s, 'a'))
-    # print(s[count_occurrences(s, 'a'):])
-    # print(numBelow(s, 'a'))
-    print(are_equal("abzz", "abxzz"))
+    main()
